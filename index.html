@@ -1,40 +1,132 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MK - تصليح دبابات البانشي</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MK - تصليح دبابات البانشي والدبابات الأخرى</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* تحسينات صغيرة على الخط والتباعد */
+    body { font-family: "Noto Naskh Arabic", Tahoma, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans Arabic", sans-serif; }
+    .card-shadow { box-shadow: 0 6px 18px rgba(2,6,23,0.06); }
+    /* زر واتساب ثابت أسفل الصفحة */
+    .whatsapp-fab { position: fixed; left: 20px; bottom: 20px; z-index: 60; }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-800 font-sans">
-  <header class="bg-gray-900 text-white py-6 text-center">
-    <h1 class="text-3xl font-bold">MK - تصليح دبابات البانشي والتطعيس</h1>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-900 text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center gap-4">
+          <div class="text-xl font-bold">MK</div>
+          <div class="hidden md:block text-sm opacity-80">تصليح دبابات البانشي والدبابات الأخرى</div>
+        </div>
+        <div class="hidden md:flex items-center gap-4">
+          <div class="text-sm">أوقات العمل: 9 صباحًا - 10 مساءً</div>
+          <a href="https://wa.me/966539539121" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm">تواصل عبر واتساب</a>
+        </div>
+        <div class="md:hidden">
+          <button id="menuBtn" class="p-2 focus:outline-none">☰</button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden bg-gray-800 text-sm">
+      <div class="px-4 py-3">أوقات العمل: 9 صباحًا - 10 مساءً</div>
+      <div class="px-4 py-3"><a href="https://wa.me/966539539121" class="block bg-green-500 text-white px-4 py-2 rounded">تواصل عبر واتساب</a></div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="bg-gradient-to-b from-gray-100 to-white py-16">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h1 class="text-3xl md:text-4xl font-extrabold mb-4">MK - تصليح دبابات البانشي والدبابات الأخرى</h1>
+      <p class="text-gray-600 max-w-2xl mx-auto mb-6">شكرا لك على تواصلك مع MK. اشرح لنا المشكلة أو النوع اللي تحتاجه وسنرد عليك بأسرع وقت ممكن.</p>
+      <div class="flex items-center justify-center gap-4">
+        <a href="https://wa.me/966539539121" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg text-lg">تواصل معنا الآن</a>
+        <a href="#gallery" class="text-gray-700 underline">شاهد معرضنا</a>
+      </div>
+    </div>
   </header>
 
-  <section class="py-12 text-center">
-    <h2 class="text-2xl font-semibold mb-4">مرحبا بك في MK</h2>
-    <p class="max-w-xl mx-auto mb-2">شكرا لك على تواصلك مع MK. يرجى إخبارنا بما يمكننا القيام به لمساعدتك، سنرد عليك في أسرع وقت ممكن.</p>
-    <p class="mb-4">أوقات العمل: 9 صباحًا إلى 10 مساءً</p>
-    <a href="https://wa.me/966539539121" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg text-lg inline-block transition">تواصل معنا على الواتساب</a>
-  </section>
+  <!-- Gallery -->
+  <main class="max-w-6xl mx-auto px-4 py-12">
+    <section id="gallery" class="mb-12">
+      <h2 class="text-2xl font-semibold text-center mb-8">معرض الصور</h2>
 
-  <section class="py-12 bg-white text-center">
-    <h2 class="text-2xl font-semibold mb-6">معرض الصور</h2>
-    <div class="flex flex-wrap justify-center gap-4">
-      <img src="image1.jpg" alt="صورة 1" class="w-72 h-48 object-cover rounded-xl shadow-md">
-      <img src="image2.jpg" alt="صورة 2" class="w-72 h-48 object-cover rounded-xl shadow-md">
-      <img src="image3.jpg" alt="صورة 3" class="w-72 h-48 object-cover rounded-xl shadow-md">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- بطاقة صورة 1 -->
+        <figure class="bg-white rounded-xl overflow-hidden card-shadow">
+          <img src="dabab1.jpg" alt="دباب بانشي 1" class="w-full h-56 object-cover">
+          <figcaption class="p-4 text-right">دباب بانشي — صيانة وتعديل يدوي</figcaption>
+        </figure>
+
+        <!-- بطاقة صورة 2 -->
+        <figure class="bg-white rounded-xl overflow-hidden card-shadow">
+          <img src="dabab2.jpg" alt="دباب بانشي 2" class="w-full h-56 object-cover">
+          <figcaption class="p-4 text-right">دباب للتطعيس — تركيب وتعديل</figcaption>
+        </figure>
+
+        <!-- شغل قادم -->
+        <figure class="bg-white rounded-xl overflow-hidden card-shadow">
+          <img src="comingsoon.jpg" alt="شغل يدنا قادم قريباً" class="w-full h-56 object-cover bg-center">
+          <figcaption class="p-4 text-right">شغل يدنا — قريبًا سنضيف المزيد من الصور</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="py-8 bg-white rounded-xl card-shadow p-6">
+      <h3 class="text-xl font-semibold mb-4 text-center">خدماتنا</h3>
+      <p class="text-gray-600 text-center mb-6 max-w-3xl mx-auto">نقوم بصيانة وتصليح دبابات البانشي والدبابات الأخرى، وتشمل الخدمات: فحص المحرك، ضبط الشاصي، تركيب قطع، تعديل العجلات، وتركيب واقيات حماية.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="text-center p-4">
+          <h4 class="font-semibold">صيانات سريعة</h4>
+          <p class="text-sm text-gray-500">خدمة سريعة مع قطع غيار أصلية أو عالية الجودة.</p>
+        </div>
+        <div class="text-center p-4">
+          <h4 class="font-semibold">تعديلات خاصة</h4>
+          <p class="text-sm text-gray-500">ترقيات أداء ومظهر حسب طلبك.</p>
+        </div>
+        <div class="text-center p-4">
+          <h4 class="font-semibold">تركيب حماية</h4>
+          <p class="text-sm text-gray-500">حماية للشاصي والمكائن للتعامل مع الطرق الوعرة.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section class="mt-10 text-center">
+      <h3 class="text-xl font-semibold mb-3">حجز أو استفسار</h3>
+      <p class="text-gray-600 mb-4">اتصل أو أرسل رسالة عبر واتساب وسنرد عليك بنفس اليوم إن شاء الله.</p>
+      <a href="https://wa.me/966539539121" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg">احجز الآن عبر الواتساب</a>
+    </section>
+  </main>
+
+  <!-- WhatsApp Floating Button -->
+  <a class="whatsapp-fab whatsapp-fab-left whatsapp-fab" href="https://wa.me/966539539121" target="_blank" rel="noopener" title="تواصل عبر واتساب">
+    <div class="bg-green-500 hover:bg-green-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20.52 3.48a11.88 11.88 0 10.001 16.83l-1.96.51a1 1 0 01-1.17-1.06l.12-1.2a9.88 9.88 0 11-1.31-9.23 9.88 9.88 0 011.31 9.23l-1.2.12a1 1 0 01-1.06-1.17l.51-1.96A11.88 11.88 0 0020.52 3.48z" fill="currentColor"/></svg>
     </div>
-  </section>
+  </a>
 
-  <section class="py-12 text-center">
-    <h2 class="text-2xl font-semibold mb-4">خدماتنا</h2>
-    <p class="max-w-xl mx-auto">تصليح وصيانة دبابات البانشي والدبابات المخصصة للتطعيس بأعلى جودة وسرعة.</p>
-  </section>
-
-  <footer class="bg-gray-900 text-white text-center py-6 mt-10">
-    <p>© 2025 MK - جميع الحقوق محفوظة</p>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white mt-10">
+    <div class="max-w-6xl mx-auto px-4 py-8 text-center">
+      <div class="mb-2">© 2025 MK - جميع الحقوق محفوظة</div>
+      <div class="text-sm opacity-80">رقم للتواصل: +966 53 953 9121</div>
+    </div>
   </footer>
+
+  <script>
+    // تفعيل زر القائمة في الجوال
+    document.getElementById('menuBtn').addEventListener('click', function(){
+      const m = document.getElementById('mobileMenu');
+      m.classList.toggle('hidden');
+    });
+  </script>
+
 </body>
 </html>
-
